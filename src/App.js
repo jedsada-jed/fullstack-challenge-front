@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -132,6 +133,12 @@ export default function PersistentDrawerLeft() {
         </div>
         <Divider />
         <List>
+          <Link style={{ textDecoration: 'none', color: 'inherit' }} to="/admin/users">
+            <ListItem button key={'test'}>
+              <ListItemIcon>{<InboxIcon />}</ListItemIcon>
+              <ListItemText primary={'test'} />
+            </ListItem>
+          </Link>
           {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
